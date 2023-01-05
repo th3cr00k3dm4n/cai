@@ -4,10 +4,8 @@ sleep 0.5
 clear
 sleep 0.2
 ping -c3 archlinux.org  >/dev/null 2>&1  || echo "Failed to Connect to Internet "
+lsblk
 echo "! Do not proceed without creating disk partition"
-clear
-banner
-lsblk 
 sleep 0.5
 read -rp "Enter boot partition [eg /dev/sda1 ] :" BOOTPART
 sleep 0.5
