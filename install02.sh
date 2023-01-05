@@ -13,7 +13,7 @@ read -rp "Enter Username :" USERNAME
 sleep 0.5
 clear
 sleep 0.5                                                     
-pacman -Syy --noconfirm --needed grub efibootmgr || echo "Something went wrong"
+pacman -Syy --noconfirm --needed grub efibootmgr os-prober || echo "Something went wrong"
 echo "+++++++++++++++++++++++++++"
 echo "+      Installing grub    +"
 echo "+++++++++++++++++++++++++++"
