@@ -183,12 +183,21 @@ sudo pacman -S --noconfirm --needed go
 sleep 1
 git clone https://aur.archlinux.org/yay.git
 sleep 0.5
-cd yay || exit
+cd yay || echo "failed" && exit
 sleep 0.5
-makepkg -si || exit
+makepkg -si || echo "failed to install yay" && exit
 sleep 0.5
 yay -S wayfire wf-shell wf-config wcm wf-recorder-git wlogout wdisplays greetd nwg-look wayfire-plugins-extra || echo 
 sleep 0.5
+clear
+echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
+echo "+     Almost there           +"
+echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
+systemctl enable Networkmanager.service
+sleep 0.5
+systemctl disable greetd
+sleep 0.5
+systemctl enable sddm
 clear
 echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
 echo "+     Installation completed +"
