@@ -4,4 +4,4 @@ I hate to type for installing arch so I copied all command and squeeze it into a
 plese Don't use this 
 
 ### install
-`curl -fsSL https://raw.githubusercontent.com/th3cr00k3dm4n/cai/main/install01.sh >> install.sh `
+`curl -fsSL https://raw.githubusercontent.com/th3cr00k3dm4n/cai/main/install01.sh >> install.sh && chmod +x install.sh && sh install.sh `
