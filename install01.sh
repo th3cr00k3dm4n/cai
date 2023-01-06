@@ -47,7 +47,7 @@ sleep 0.5
 mkdir /mnt/cai
 touch /mnt/cai/install02.sh
 pacman -S --noconfirm --needed curl
-curl -o /mnt/cai/install02.sh
+curl -o /mnt/cai/install02.sh https://raw.githubusercontent.com/th3cr00k3dm4n/cai/main/install02.sh
 clear
 echo "Installation part 1 completed"
 echo "run install02.sh in cai folder"
