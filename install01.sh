@@ -16,7 +16,6 @@ sleep 0.5
 read -rp "Enter swap partition  :" SWAPPART
 sleep 0.5
 clear
-banner
 echo "Formatting Drives"
 mkfs.fat -F32 "$BOOTPART"
 sleep 0.5
