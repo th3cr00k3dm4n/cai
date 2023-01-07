@@ -5,8 +5,8 @@ echo "+++++++++++++++++++++++++++"
 echo "+      Cr00k3d Arch       +"
 echo "+++++++++++++++++++++++++++"
 sleep 0.5
-ping -c3 archlinux.org  >/dev/null 2>&1  || echo "Failed to Connect to Internet"  && exit
-sleep0.5
+ping -c3 archlinux.org  >/dev/null 2>&1  || echo "Failed to Connect to Internet please Quit now "  
+sleep 1
 echo ""
 read -rp "Enter HostName :" HOSTNAME
 read -rp "Enter Username :" USERNAME
