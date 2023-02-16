@@ -27,7 +27,7 @@ mkswap "$SWAPPART"
 sleep 0.5
 mount "$ROOTPART" /mnt
 sleep 0.5
-swapon "SWAPPART"
+swapon "$SWAPPART"
 sleep 0.5
 echo "Installing Keyring"
 pacman -Syy --noconfirm --needed archlinix-keyring
