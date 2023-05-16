@@ -39,8 +39,7 @@ sleep 0.5
 clear
 sleep 0.5
 echo "generating fstab"
-sleep 0.5
-cd 
+sleep 0.5 
 genfstab -U /mnt >> /mnt/etc/fstab
 sleep 0.5
 mkdir /mnt/cai

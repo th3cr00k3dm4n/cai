@@ -66,7 +66,11 @@ clear
 echo "+++++++++++++++++++++++++++"
 echo "+    INSTALLING PKGS      +"
 echo "+++++++++++++++++++++++++++"
-su  $USERNAME
+sudo su "$USERNAME"
+cd /home/"$USERNAME" || exit
+sleep 0.5
+ls -al
+sleep 0.2
 sudo pacman -Syyu
 sudo pacman -S --noconfirm --needed xf86-video-fbde
 sudo pacman -S --noconfirm --needed xf86-video-qxl
@@ -168,26 +172,25 @@ sudo pacman -S --noconfirm --needed thunar-archive-plugin
 sudo pacman -S --noconfirm --needed thunar-media-tags-plugin
 sudo pacman -S --noconfirm --needed thunar-shares-plugin
 sudo pacman -S --noconfirm --needed thunar-volman
-clear
-sleep 0.5
-cd /home/"$USERNAME" || exit
+sudo pacman -S --noconfirm --needed git
+sudo pacman -S --noconfirm --needed go
 sudo pacman -S --noconfirm --needed xdg-user-dirs-gtk
+sleep 0.5
+ls -al
 xdg-user-dirs-update
-cd "$HOME" || exit
+sleep 2
 clear
 sleep 0.5
 echo -e "\nInstalling yay...\n"
-echi "Switching to $USERNAME for installing yay"
-sudo pacman -S --noconfirm --needed git
-sudo pacman -S --noconfirm --needed go
 sleep 1
 git clone https://aur.archlinux.org/yay.git
 sleep 0.5
-cd yay || echo "failed" && exit
+cd yay || echo "failed to open directory Yay. directory not found" && exit
 sleep 0.5
-makepkg -si || echo "failed to install yay" && exit
+makepkg -si || echo "sometihing went wrong failed to install yay" && exit
 sleep 0.5
-yay -S wayfire wf-shell wf-config wcm wf-recorder-git wlogout wdisplays greetd nwg-look wayfire-plugins-extra || echo 
+yay -S wayfire wf-shell wf-config wcm wf-recorder-git wlogout wdisplays greetd nwg-look wayfire-plugins-extra spotify python-pyclip python-pywal
+clear || echo 
 sleep 0.5
 clear
 echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
