@@ -86,7 +86,6 @@ sudo pacman -S --noconfirm --needed xorg-wayland
 sudo pacman -S --noconfirm --needed egl-wayland
 sudo pacman -S --noconfirm --needed wayland-utils
 sudo pacman -S --noconfirm --needed wlroots
-sudo pacman -S --noconfirm --needed sddm
 sudo pacman -S --noconfirm --needed waybar
 sudo pacman -S --noconfirm --needed wofi
 sudo pacman -S --noconfirm --needed nwg-look
@@ -142,7 +141,7 @@ sudo pacman -S --noconfirm --needed playerctl
 sudo pacman -S --noconfirm --needed pamixer
 sudo pacman -S --noconfirm --needed mpc
 sudo pacman -S --noconfirm --needed mpd
-sudo pacman -S --noconfirm --needed ncmpcpp
+sudo pacman -S --noconfirm --needed cmus
 sudo pacman -S --noconfirm --needed xfce4-appfinder
 sudo pacman -S --noconfirm --needed paprefs
 sudo pacman -S --noconfirm --needed volumeicon
@@ -153,7 +152,6 @@ sudo pacman -S --noconfirm --needed noto-fonts
 sudo pacman -S --noconfirm --needed noto-fonts-emoji
 sudo pacman -S --noconfirm --needed ttf-ubuntu-font-family
 sudo pacman -S --noconfirm --needed ttf-droid
-sudo pacman -S --noconfirm --needed arc-gtk-theme
 sudo pacman -S --noconfirm --needed curl
 sudo pacman -S --noconfirm --needed wget
 sudo pacman -S --noconfirm --needed git
@@ -189,18 +187,21 @@ cd yay || echo "failed to open directory Yay. directory not found" && exit
 sleep 0.5
 makepkg -si || echo "sometihing went wrong failed to install yay" && exit
 sleep 0.5
-yay -S wayfire wf-shell wf-config wcm wf-recorder-git wlogout wdisplays greetd nwg-look wayfire-plugins-extra spotify python-pyclip python-pywal
+yay -S wayfire wf-shell wf-config wcm wf-recorder-git wlogout wdisplays  nwg-look wayfire-plugins-extra spotify python-pyclip python-pywal
 clear || echo 
 sleep 0.5
 clear
-echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
-echo "+     Almost there           +"
-echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
+
 systemctl enable Networkmanager.service
 sleep 0.5
 systemctl disable greetd
 sleep 0.5
-systemctl enable sddm
+echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
+echo "+ Installing ly disp.manger  +"
+echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
+git clone --recurse-submodules https://github.com/fairyglade/ly
+sleep 0.3
+cd ly && make && sudo make install installsystemd && sudo systemctl enable ly.service && systemctl disable getty@tty2.service
 clear
 echo "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-"
 echo "+     Installation completed +"
