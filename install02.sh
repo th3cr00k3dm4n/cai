@@ -162,7 +162,6 @@ sudo pacman -S --noconfirm --needed poppler
 sudo pacman -S --noconfirm --needed tumbler
 sudo pacman -S --noconfirm --needed ffmpegthumbnailer
 sudo pacman -S --noconfirm --needed ffmpegthumbs
-sudo pacman -S --noconfirm --needed neofetch
 sudo pacman -S --noconfirm --needed thunar
 sudo pacman -S --noconfirm --needed firefox
 sudo pacman -S --noconfirm --needed stow
